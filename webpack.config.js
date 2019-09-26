@@ -20,6 +20,14 @@ module.exports={
                 {test:/\.vue$/,use:'vue-loader'},
                 {test:/\.(ttf|eot|svg|woff|woff2)$/, use: 'url-loader'}
         ]
+    },
+    devServer:{
+      
+            proxy: {
+                '/api': 'http://39.97.33.178',
+                changeOrigin: true
+              }
+        
     }
 
 }

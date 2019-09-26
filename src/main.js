@@ -4,8 +4,12 @@ import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css'
 import VueRouter from 'vue-router'
 import router from './router.js'
+import './font/iconfont.css'
 Vue.use(VueRouter)
 Vue.use(Mint);
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
 
 new Vue({
     el:'#app',

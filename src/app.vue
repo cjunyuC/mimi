@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mt-header fixed title="MiMi影院"></mt-header>
+    <mt-header fixed :title="title"></mt-header>
     
        <div id="box">
          <transition mode="out-in">
@@ -10,17 +10,23 @@
     
    
     <mt-tabbar v-model="selected">
-      <mt-tab-item id="movie">电影</mt-tab-item>
-      <mt-tab-item id="cimena">影院</mt-tab-item>
+      
+      <mt-tab-item id="movie">电影<span class="iconfont icon-dianying" slot="icon"></span></mt-tab-item>
+       
+      <mt-tab-item id="cimena">影院<span class="iconfont icon-dianyingyuan" slot="icon"></span></mt-tab-item>
     </mt-tabbar>
   </div>
 </template>
 <script>
+
 export default {
   data() {
-    return { selected: "movie" };
+    return { selected: "movie",
+             title:''
+             }
   },
   created() {
+    this.title=this.$route.meta
     if (this.$route.path == "/index") {
       this.selected = "movie";
     } else if (this.$route.path == "/cimena") {
@@ -34,6 +40,13 @@ export default {
       } else if (newval == "movie"&&this.$route.path!=='/index') {
         this.$router.push({ path: "/index" });
       }
+    },
+    $route:function(newval){
+    //做一个meta的非空校验
+    if(newval.meta!=null||newval.meta!='undefiend'||newval.meta!=''){
+  this.title = newval.meta
+    }
+    
     }
   }
 };
@@ -42,8 +55,8 @@ export default {
 #box {
   margin-top: 40px;
   height: calc(100vh - 66px);
-  background-color: red;
-  overflow: hidden;
+  background-color:#fff;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
