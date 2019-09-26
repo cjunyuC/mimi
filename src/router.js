@@ -11,7 +11,7 @@ const router = new VueRouter({
         { path: '/', redirect: '/index' },
         { path: '/index', component: index,meta:'电影',
     children:[
-        {path:'',redirect:'watching'},
+        {path:'',redirect:'getCity'},
         {path:'search',component:search,meta:'搜索',},
         {path:'watching',component:watching,meta:'正在上映',},
         {path:'willWatch',component:willWatch,meta:'即将上映',},

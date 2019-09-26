@@ -1,0 +1,30 @@
+{
+  "id": "1435509",
+  "name": "mimi",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "731139",
+      "name": "搜索",
+      "font_class": "guanbi",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "4933212",
+      "name": "电影",
+      "font_class": "dianying",
+      "unicode": "e6ee",
+      "unicode_decimal": 59118
+    },
+    {
+      "icon_id": "8922379",
+      "name": "电影院",
+      "font_class": "dianyingyuan",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    }
+  ]
+}
