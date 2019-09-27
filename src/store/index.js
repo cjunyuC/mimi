@@ -7,7 +7,6 @@ const store = new Vuex.Store({
     },
     mutations:{
         changeCities(state,payLoad){
-          
             state.cities=payLoad.city
         },
         getCity(state,payLoad){

@@ -19,8 +19,12 @@
     
             <mt-index-section :index="key" v-for="key in Object.keys(citiesObj).sort()" :key="key">
     
-                <mt-cell :title="item.nm" v-for="(item) in citiesObj[key]" :key="item.id"></mt-cell>
-    
+            
+                   <div @click="changeCity(item.nm)" v-for="(item) in citiesObj[key]" :key="item.id">
+                        <mt-cell :title="item.nm"></mt-cell>
+                   </div>
+             
+         
             </mt-index-section>
     
         </mt-index-list>
@@ -52,7 +56,7 @@
             //获取城市列表的数据
     
             getCity().then(res => {
-    
+            console.log(res)
                 this.list = res.data.cities
     
             })
@@ -104,11 +108,8 @@
                         citiesObj[firstCode].push(item)
     
                     } else {
-    
-    
-    
                         citiesObj[firstCode] = []
-    
+
                         citiesObj[firstCode].push(item)
     
                     }
@@ -125,9 +126,7 @@
             console.log(city)
             this.$store.commit('changeCities',{city:city})
         }
-    },
-    
-    
+    }, 
     }
 </script>
 <style lang="css" scoped>

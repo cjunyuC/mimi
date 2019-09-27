@@ -34,6 +34,9 @@
   </div>
 </template>
 <script>
+// import {
+//         getLocalCity
+//     } from './services/api.js'
   export default {
   
     data() {
@@ -61,6 +64,12 @@
         this.selected = "cimena";
   
       }
+//触发获取本地城市
+    //   getLocalCity().then(res=>{
+    //    ((val)=>{
+    //   this.$store.commit('getCity',val)
+    // })(res.data.nm)
+    // })
   
     },
   
